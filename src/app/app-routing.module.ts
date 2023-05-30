@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { VistaMusculosComponent } from './components/vista-musculos/vista-musculos.component';
+import { VistaDetalleMusculoComponent } from './components/vista-detalle-musculo/vista-detalle-musculo.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'musculos',
-    component: VistaMusculosComponent
+    component: VistaMusculosComponent,
+  },
+  {
+    path: 'musculos/:id',
+    component: VistaDetalleMusculoComponent
   },
   {
     path: '**',

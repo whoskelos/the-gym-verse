@@ -8,10 +8,12 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
-  constructor(router: Router) {}
+  constructor(private router: Router) {}
 
-  // TODO: Redirigir a la pagina de seleccion de musculos
+  /**
+   * Funcion que navega hacia la lista de los musculos
+   */
   start() {
-
+    this.router.navigate(['musculos']);
   }
 }

@@ -1,0 +1,10 @@
+button {
+    border: none !important;
+}
+.seleccionado {
+    background: #ECE016;
+}
+
+.text-warning {
+    color: #ECE016 !important;
+}

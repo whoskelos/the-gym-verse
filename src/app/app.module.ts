@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { VistaMusculosComponent } from './components/vista-musculos/vista-musculos.component';
+import { VistaDetalleMusculoComponent } from './components/vista-detalle-musculo/vista-detalle-musculo.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { VistaMusculosComponent } from './components/vista-musculos/vista-muscul
     HomeComponent,
     NotFoundPageComponent,
     FooterComponent,
-    VistaMusculosComponent
+    VistaMusculosComponent,
+    VistaDetalleMusculoComponent,
   ],
   imports: [
     BrowserModule,
