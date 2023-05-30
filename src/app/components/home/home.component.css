@@ -4,9 +4,21 @@
 }
 
 .title {
-    color: #ECE016;
+    color: #8d8d02;
+    letter-spacing: 3px;
 }
 
 .title:hover {
     cursor: pointer;
+}
+
+.neon {
+    transition: 1s;
+}
+
+.neon:hover {
+    text-shadow: 0 0 2px #ECE016,
+    0 0 10px #ECE016,
+    0 0 20px #ECE016,
+    0 0 40px #ECE016;
 }
