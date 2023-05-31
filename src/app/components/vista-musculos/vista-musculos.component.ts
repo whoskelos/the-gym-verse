@@ -13,6 +13,8 @@ export class VistaMusculosComponent implements OnInit {
   filtroCategoria: string | undefined;
   listaEjercicios: IEjercicio[] = EJERCICIOS;
   listaFiltrada: IEjercicio[] | undefined;
+  listaMusculos: string[] | undefined;
+  musculoSeleccionado: string | undefined;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -23,8 +25,8 @@ export class VistaMusculosComponent implements OnInit {
       this.filtroCategoria = params.categoria;
       if (this.filtroCategoria) {
         this.listaFiltrada = this.listaEjercicios.filter(ejercicio => ejercicio.categoria == this.filtroCategoria);
-      } else {
-        console.log(this.listaEjercicios);
+        // * Filtro la lista para rellenar el select con los musculos
+        this.listaMusculos = this.listaFiltrada.map(ejercicio => ejercicio.zonaMuscular);
       }
     })
 
@@ -59,7 +61,10 @@ export class VistaMusculosComponent implements OnInit {
     }
 
     this.router.navigate(['musculos'], navigationExtras);
+  }
 
+  filtrarPorMusculo(event: any): void {
+    console.log(event);
   }
 
 }

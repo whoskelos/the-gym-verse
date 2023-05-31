@@ -1,5 +1,4 @@
 type Categoria = 'torso' | 'pierna';
-
 export interface IEjercicio {
     id: string;
     nombre: string;

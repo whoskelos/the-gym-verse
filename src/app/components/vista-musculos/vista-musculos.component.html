@@ -11,16 +11,23 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="botones mb-5 d-flex justify-content-evenly align-items-center">
+            <div class="botones mb-3 d-flex justify-content-evenly align-items-center">
                 <div class="text-white">Seleccione la zona</div>
                 <button class="btn btn-light fw-bold" (click)="listarEjerciciosTorso()" [ngClass]="filtroCategoria == 'torso' ? 'seleccionado' : ''">TORSO</button>
                 <button class="btn btn-light fw-bold" (click)="listarEjerciciosPierna()" [ngClass]="filtroCategoria == 'pierna' ? 'seleccionado' : ''">PIERNA</button>
+            </div>
+            <div class="selectMusculos mx-3" *ngIf="listaMusculos">
+                <select class="form-select form-select mb-3" aria-label=".form-select-lg example">
+                    <!-- TODO: REVISAR EL SELECT PORQUE LA PRIMERA OPCION NO APARECE CUANDO PONGO EL NGMODEL-->
+                    <option selected value="0">Seleccione un musculo</option>
+                    <option *ngFor="let musculo of listaMusculos; let i = index" value="{{ musculo}}">{{ musculo }}</option>
+                  </select>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="main d-flex flex-column flex-md-row align-items-center">
+            <div class="main d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-md-center">
                 <!-- * Pintamos las cards de los ejercicios condicionando si hay filtro o no -->
                 <ng-container *ngIf="listaFiltrada; else listaCompleta">
                     <div class="card m-3" style="width: 18rem;" *ngFor="let ejercicio of listaFiltrada">
@@ -32,7 +39,7 @@
                 </ng-container>
                 
                 <ng-template #listaCompleta>
-                    <div class="card" *ngFor="let ejercicio of listaEjercicios">
+                    <div class="card m-3" style="width: 18rem;" *ngFor="let ejercicio of listaEjercicios">
                         <img class="card-img-top" src="assets/img/{{ejercicio.imagen}}" alt="{{ ejercicio.nombre }}">
                         <div class="card-body">
                             <h4 class="card-title">{{ ejercicio.nombre }}</h4>
