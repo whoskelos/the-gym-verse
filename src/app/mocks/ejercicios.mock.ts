@@ -13,7 +13,7 @@ export const EJERCICIOS: IEjercicio[] = [
     },
     {
         id: "2",
-        nombre: 'Extension de triceps',
+        nombre: 'Ext. de triceps',
         categoria: 'torso',
         zonaMuscular: 'triceps',
         series: 3,

@@ -14,7 +14,7 @@ export class VistaMusculosComponent implements OnInit {
   listaEjercicios: IEjercicio[] = EJERCICIOS;
   listaFiltrada: IEjercicio[] | undefined;
   listaMusculos: string[] | undefined;
-  musculoSeleccionado: string | undefined;
+  selectedOption: string = "0";
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -43,7 +43,7 @@ export class VistaMusculosComponent implements OnInit {
         categoria: 'torso',
       }
     }
-
+    this.selectedOption = "0";
     this.router.navigate(['musculos'], navigationExtras);
 
   }
@@ -59,12 +59,16 @@ export class VistaMusculosComponent implements OnInit {
         categoria: 'pierna',
       }
     }
-
+    this.selectedOption = "0";
     this.router.navigate(['musculos'], navigationExtras);
   }
+  /**
+   * Funcion que esta pendiente de la opcion que se seleccione en el select para filtrar por musculo
+   * @param event Es el valor del option del select
+   */
+  onOptionChange(event: any): void {
+    this.listaFiltrada = this.listaEjercicios.filter((ejercicio) => ejercicio.zonaMuscular == event);
 
-  filtrarPorMusculo(event: any): void {
-    console.log(event);
   }
 
 }
