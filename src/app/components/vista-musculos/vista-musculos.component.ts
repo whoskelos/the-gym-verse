@@ -67,7 +67,11 @@ export class VistaMusculosComponent implements OnInit {
    * @param event Es el valor del option del select
    */
   onOptionChange(event: any): void {
-    this.listaFiltrada = this.listaEjercicios.filter((ejercicio) => ejercicio.zonaMuscular == event);
+    if (event != "0") {
+      this.listaFiltrada = this.listaEjercicios.filter((ejercicio) => ejercicio.zonaMuscular == event);
+    } else {
+      this.listaFiltrada = this.listaEjercicios.filter(ejercicio => ejercicio.categoria == this.filtroCategoria);
+    }
 
   }
 
