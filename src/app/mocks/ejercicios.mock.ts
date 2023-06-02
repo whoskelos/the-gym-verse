@@ -9,7 +9,7 @@ export const EJERCICIOS: IEjercicio[] = [
         series: 3,
         repeticiones: 10,
         linkVideo: '',
-        imagen: 'album-1.jpg'
+        imagen: 'album-1.webp'
     },
     {
         id: "2",
@@ -19,7 +19,7 @@ export const EJERCICIOS: IEjercicio[] = [
         series: 3,
         repeticiones: 10,
         linkVideo: '',
-        imagen: 'album-1.jpg'
+        imagen: 'album-1.webp'
     },
     {
         id: "3",
@@ -29,7 +29,7 @@ export const EJERCICIOS: IEjercicio[] = [
         series: 4,
         repeticiones: 10,
         linkVideo: '',
-        imagen: 'album-4.jpg'
+        imagen: 'album-4.webp'
     },
     {
         id: "4",
@@ -39,6 +39,6 @@ export const EJERCICIOS: IEjercicio[] = [
         series: 3,
         repeticiones: 10,
         linkVideo: '',
-        imagen: 'album-4.jpg'
+        imagen: 'album-4.webp'
     }
 ]
