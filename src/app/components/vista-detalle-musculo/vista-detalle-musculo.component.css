@@ -1,3 +1,39 @@
-.subtitulo { 
-    color: #ECE016;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+.contenedor {
+    font-family: 'Fredoka', sans-serif;
+}
+.text-warning {
+    color: #ECE016 !important;
+}
+
+@media (width <= 768px ) {
+    .card {
+        width: 20rem;
+    }
+}
+
+@media (width >= 768px ) {
+    .card {
+        width: 30rem;
+    }
+}
+
+@media (width >= 992px) {
+    .card {
+        width: 40rem;
+    }
+}
+
+.video {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* Relación de aspecto 16:9 (para vídeos) */
+}
+
+#videoEjercicio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
