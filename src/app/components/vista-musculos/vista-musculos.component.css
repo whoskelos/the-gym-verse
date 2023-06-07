@@ -28,15 +28,11 @@ button {
 .tarjeta {
     transition: .3s;
 }
-
 .tarjeta:hover {
-    box-shadow: 0 0 2px #ECE016,
-    0 0 10px #ECE016,
-    0 0 15px #ECE016,
-    0 0 20px #ECE016;
+    cursor: pointer;
 }
-
 .tarjeta img {
+    border-radius: 15px;
     width: 8rem;
     transition: .3s;
 }

@@ -54,7 +54,7 @@
                     <div class="tarjeta m-3" *ngFor="let ejercicio of listaEjercicios" [routerLink]="ejercicio.id">
                         <img class="mx-2" src="assets/img/{{ejercicio.imagen}}" [alt]="ejercicio.nombre">
                         <div class="tarjeta-cuerpo">
-                            <div class="tarjeta-titulo fs-5 text-center">{{ ejercicio.nombre }}</div>
+                            <div class="tarjeta-titulo fs-5 text-center fw-bold">{{ ejercicio.nombre }}</div>
                         </div>
                     </div>
                 </ng-template>
