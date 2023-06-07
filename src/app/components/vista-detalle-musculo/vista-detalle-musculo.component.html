@@ -26,22 +26,11 @@
         <div class="col-12 d-flex flex-column flex-md-row align-items-center justify-content-md-center">
             <!-- TODO: hay que disenyar la vista de este componente -->
             <div class="card">
-                <img class="card-img-top p-2" src="assets/img/{{ejercicioSeleccionado?.imagen}}"
-                    [alt]="ejercicioSeleccionado?.nombre">
                 <div class="card-body">
-                    <h4 class="card-title fw-bold">{{ ejercicioSeleccionado?.nombre }}</h4>
+                    <h2 class="card-title fw-bold"><i class="fa-solid fa-dumbbell"></i> {{ ejercicioSeleccionado?.nombre }} </h2>
                     <p class="card-text">{{ ejercicioSeleccionado?.series }} series x {{ ejercicioSeleccionado?.repeticiones }} reps</p>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-12">
-            <h3 class="fw-bold text-white mx-4">Descripcion</h3>
-            <hr class="text-white">
-        </div>
-        <div class="col-12">
-            {{ ejercicioSeleccionado?.descripcion }}
         </div>
     </div>
 </div>

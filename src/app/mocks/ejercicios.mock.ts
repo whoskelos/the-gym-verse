@@ -6,7 +6,7 @@ export const EJERCICIOS: IEjercicio[] = [
         nombre: 'Curl biceps',
         categoria: 'torso',
         zonaMuscular: 'biceps',
-        series: 3,
+        series: 4,
         repeticiones: 10,
         linkVideo: '',
         imagen: 'album-1.webp'
@@ -37,7 +37,7 @@ export const EJERCICIOS: IEjercicio[] = [
         categoria: 'pierna',
         zonaMuscular: 'Gluteo',
         series: 3,
-        repeticiones: 10,
+        repeticiones: 15,
         linkVideo: '',
         imagen: 'album-4.webp'
     }
