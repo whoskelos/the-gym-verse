@@ -22,7 +22,6 @@ export class VistaDetalleMusculoComponent implements OnInit{
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id != '') {
       this.ejercicioSeleccionado = this.listaEjercicios.find((ejercicio) => ejercicio.id == this.id);
-      console.log(this.ejercicioSeleccionado);
     }
   }
 

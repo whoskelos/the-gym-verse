@@ -1,16 +1,7 @@
-<div class="contenedor">
+<div class="contenedor d-flex vh-100 flex-column justify-content-between">
+    <app-header></app-header>
     <div class="row">
-        <div class="col-12 mt-5 mb-3">
-            <header>
-                <div class="title text-center">
-                    <h1 class="text-white fw-bold">TheGymVerse</h1>
-                    <p class="text-warning">Listado de musculos</p>
-                </div>
-            </header>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
+        <div class="col-12 p-3">
             <div class="botones mb-3 d-flex justify-content-evenly align-items-center">
                 <div class="text-white">Seleccione la zona</div>
                 <button class="btn btn-light fw-bold" (click)="listarEjerciciosTorso()"
@@ -18,7 +9,7 @@
                 <button class="btn btn-light fw-bold" (click)="listarEjerciciosPierna()"
                     [ngClass]="filtroCategoria == 'pierna' ? 'seleccionado' : ''">PIERNA</button>
             </div>
-            <div class="selectMusculos mx-3" *ngIf="listaMusculos">
+            <div class="selectMusculos p-3" *ngIf="listaMusculos">
                 <select class="form-select form-select mb-3" [(ngModel)]="selectedOption"
                     (ngModelChange)="onOptionChange($event)">
                     <option selected value="0">Seleccione un musculo</option>
@@ -31,21 +22,21 @@
     <div class="row" *ngIf="selectedOption !== '0' ">
         <div class="col-12">
             <!-- * Pintamos el nombre del musculo una vez sea seleccionado en el select -->
-            <div class="my-3">
-                <h2 class="text-center text-white text-uppercase">{{ selectedOption }}
-                </h2>
+            <div class="text-center display-3">
+                <span class="text-center text-white text-uppercase">{{ selectedOption }}
+                </span>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
+    <div class="row flex-grow-1">
+        <div class="col-12 p-3">
             <div class="main d-flex flex-column flex-md-row flex-wrap justify-content-md-center">
                 <!-- * Pintamos las cards de los ejercicios condicionando si hay filtro o no -->
                 <ng-container *ngIf="listaFiltrada; else listaCompleta" >
                     <div class="tarjeta m-3" *ngFor="let ejercicio of listaFiltrada" [routerLink]="ejercicio.id">
                         <img class="mx-2" src="assets/img/{{ejercicio.imagen}}" [alt]="ejercicio.nombre">
                         <div class="tarjeta-cuerpo">
-                            <div class="tarjeta-titulo fs-5 text-center">{{ ejercicio.nombre }}</div>
+                            <div class="tarjeta-titulo fs-5 text-center fw-bold">{{ ejercicio.nombre }}</div>
                         </div>
                     </div>
                 </ng-container>
@@ -60,6 +51,11 @@
                 </ng-template>
 
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-footer></app-footer>
         </div>
     </div>
 </div>
