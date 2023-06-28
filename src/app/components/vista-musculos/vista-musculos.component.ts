@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { EJERCICIOS } from 'src/app/mocks/ejercicios.mock';
 import { IEjercicio } from 'src/app/models/ejercicio.interface';
+import { EjercicioService } from 'src/app/services/ejercicio.service';
 
 @Component({
   selector: 'app-vista-musculos',
@@ -11,15 +11,17 @@ import { IEjercicio } from 'src/app/models/ejercicio.interface';
 export class VistaMusculosComponent implements OnInit {
 
   filtroCategoria: string | undefined;
-  listaEjercicios: IEjercicio[] = EJERCICIOS;
+  listaEjercicios: IEjercicio[] = [];
   listaFiltrada: IEjercicio[] | undefined;
   listaMusculos: string[] | undefined;
   selectedOption: string = "0";
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private _ejercicioService: EjercicioService) { }
 
   ngOnInit(): void {
-
+    this.obtenerEjercicios();
     // * Obtengo los queryParams para filtrar
     this.route.queryParams.subscribe((params: any) => {
       this.filtroCategoria = params.categoria;
@@ -30,6 +32,10 @@ export class VistaMusculosComponent implements OnInit {
       }
     })
 
+  }
+
+  obtenerEjercicios() {
+    this._ejercicioService.obtenerEjercicios().subscribe(ejercicios => this.listaEjercicios = ejercicios)
   }
 
 
