@@ -34,7 +34,7 @@ export class VistaMusculosComponent implements OnInit {
 
   }
 
-  obtenerEjercicios() {
+  obtenerEjercicios(): void {
     this._ejercicioService.obtenerEjercicios().subscribe(ejercicios => this.listaEjercicios = ejercicios)
   }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IEjercicio } from 'src/app/models/ejercicio.interface';
-import { EJERCICIOS } from 'src/app/mocks/ejercicios.mock';
+import { EjercicioService } from 'src/app/services/ejercicio.service';
 
 @Component({
   selector: 'app-vista-detalle-musculo',
@@ -10,19 +11,37 @@ import { EJERCICIOS } from 'src/app/mocks/ejercicios.mock';
 })
 export class VistaDetalleMusculoComponent implements OnInit{
   
-  id: string | null = '';
+  id: any;
   ejercicioSeleccionado: IEjercicio | undefined;
-  listaEjercicios: IEjercicio[] = EJERCICIOS;
+  videoUrl: any;
   
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private _ejercicioService: EjercicioService,
+    private sanitizer: DomSanitizer
+    ) { }
 
   ngOnInit(): void {
-    
     // * Obtengo el id del ejercicio seleccionado que viene por queryParam para buscarlo
     this.id = this.route.snapshot.paramMap.get('id');
-    if (this.id != '') {
-      this.ejercicioSeleccionado = this.listaEjercicios.find((ejercicio) => ejercicio.id == this.id);
-    }
+    this._ejercicioService.obtenerEjercicio(this.id).subscribe({
+      next: (response) => {
+        this.ejercicioSeleccionado = response
+        this.videoUrl = 'https://www.youtube.com/embed/' + response.videoURL;
+        this.videoUrl =this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
+        console.log(this.videoUrl);
+      },
+      error: (err) => console.error(err)
+    })
+  }
+
+  updateVideoUrl(id: string) {
+    // Appending an ID to a YouTube URL is safe.
+    // Always make sure to construct SafeValue objects as
+    // close as possible to the input data so
+    // that it's easier to check if the value is safe.
+    this.videoUrl = 'https://www.youtube.com/embed/' + id;
+    this.videoUrl =this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
   }
 
 }

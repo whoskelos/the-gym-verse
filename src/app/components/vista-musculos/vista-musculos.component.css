@@ -30,6 +30,7 @@ button {
 }
 .tarjeta:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5); /* Cambia el color de sombra según tus preferencias */
 }
 .tarjeta img {
     border-radius: 15px;
@@ -37,9 +38,6 @@ button {
     transition: .3s;
 }
 
-.tarjeta img:hover {
-    width: 9rem;
-}
 
 .tarjeta-cuerpo {
     flex-grow: 1;

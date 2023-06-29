@@ -33,7 +33,7 @@
             <div class="main d-flex flex-column flex-md-row flex-wrap justify-content-md-center">
                 <!-- * Pintamos las cards de los ejercicios condicionando si hay filtro o no -->
                 <ng-container *ngIf="listaFiltrada; else listaCompleta" >
-                    <div class="tarjeta m-3" *ngFor="let ejercicio of listaFiltrada" [routerLink]="ejercicio.id">
+                    <div class="tarjeta m-3" *ngFor="let ejercicio of listaFiltrada" [routerLink]="ejercicio._id">
                         <img class="mx-2" src="assets/img/{{ejercicio.imagen}}" [alt]="ejercicio.nombre">
                         <div class="tarjeta-cuerpo">
                             <div class="tarjeta-titulo fs-5 text-center fw-bold">{{ ejercicio.nombre }}</div>
@@ -42,7 +42,7 @@
                 </ng-container>
 
                 <ng-template #listaCompleta>
-                    <div class="tarjeta m-3" *ngFor="let ejercicio of listaEjercicios" [routerLink]="ejercicio.id">
+                    <div class="tarjeta m-3" *ngFor="let ejercicio of listaEjercicios" [routerLink]="ejercicio._id">
                         <img class="mx-2" src="assets/img/{{ejercicio.imagen}}" [alt]="ejercicio.nombre">
                         <div class="tarjeta-cuerpo">
                             <div class="tarjeta-titulo fs-5 text-center fw-bold">{{ ejercicio.nombre }}</div>
