@@ -27,8 +27,8 @@ export class VistaMusculosComponent implements OnInit {
       this.filtroCategoria = params.categoria;
       if (this.filtroCategoria) {
         this.listaFiltrada = this.listaEjercicios.filter(ejercicio => ejercicio.categoria == this.filtroCategoria);
-        // * Filtro la lista para rellenar el select con los musculos
-        this.listaMusculos = this.listaFiltrada.map(ejercicio => ejercicio.zonaMuscular);
+        // * Filtro la lista para rellenar el select con los musculos el set permite que no se dupliquen
+        this.listaMusculos = [...new Set(this.listaFiltrada.map(ejercicio => ejercicio.zonaMuscular))]
       }
     })
 
