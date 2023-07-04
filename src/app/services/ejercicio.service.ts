@@ -8,7 +8,7 @@ import { IEjercicio } from '../models/ejercicio.interface';
 })
 export class EjercicioService {
 
-  url = 'http://localhost:3000/api/ejercicios/';
+  url = 'https://gymverse.fly.dev/';
 
   constructor(private http: HttpClient) { }
 
