@@ -29,7 +29,6 @@ export class VistaDetalleMusculoComponent implements OnInit{
         this.ejercicioSeleccionado = response
         this.videoUrl = 'https://www.youtube.com/embed/' + response.videoURL;
         this.videoUrl =this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
-        console.log(this.videoUrl);
       },
       error: (err) => console.error(err)
     })
