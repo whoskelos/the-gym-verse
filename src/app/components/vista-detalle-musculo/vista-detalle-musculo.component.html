@@ -1,19 +1,10 @@
 <div class="contenedor d-flex vh-100 flex-column justify-content-between">
     <app-header></app-header>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <span class="display-2 fw-bold text-white"> {{ ejercicioSeleccionado?.nombre }} </span>
+            <span class="display-2 fw-bold text-white text-center mb-3"> {{ ejercicioSeleccionado?.nombre }} </span>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12 mb-3">
-            <h3 class="fw-bold text-white mx-4">Ejemplo</h3>
-            <hr class="text-white">
-            <div class="video d-flex flex-column flex-md-row align-items-center justify-content-md-center">
-                <iframe id="videoEjercicio" [src]="videoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+    </div> -->
     <div class="row">
         <div class="col-12">
             <h3 class="fw-bold text-white mx-4">Informacion</h3>
@@ -28,6 +19,16 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h3 class="fw-bold text-white mx-4">Ejemplo</h3>
+            <hr class="text-white">
+            <div class="video d-flex flex-column flex-md-row align-items-center justify-content-md-center">
+                <iframe id="videoEjercicio" [src]="videoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <app-footer></app-footer>
